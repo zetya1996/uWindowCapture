@@ -439,10 +439,20 @@ bool WindowTexture::CaptureByWindowsGraphicsCapture()
 
     wgc->EnableCursorCapture(GetCursorDraw());
 
+
+    const UINT preTextureWidth = textureWidth_;
+    const UINT preTextureHeight = textureHeight_;
+
+
     textureWidth_ = wgc->GetWidth();
     textureHeight_ = wgc->GetHeight();
     offsetX_ = 0;
     offsetY_ = 0;
+
+    if (textureWidth_ != preTextureWidth || textureHeight_ != preTextureHeight)
+    {
+        MessageManager::Get().Add({ MessageType::WindowSizeChanged, window_->GetId(), window_->GetWindowHandle() });
+    }
 
     return true;
 }

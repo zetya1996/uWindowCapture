@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="uWindowCapture.vcxproj" Id="bc5de2f9-bdcc-4449-a017-e5642e04bb56" />
+</Solution>

@@ -322,6 +322,7 @@ void WindowManager::UpdateWindows()
                 {
                     if (window->hasTitleUpdateRequested_ || window->GetTitle().empty()) 
                     {
+                        window->data2_.isAltTabWindow = IsAltTabWindow(window->GetWindowHandle());
                         window->hasTitleUpdateRequested_ = false;
                         window->UpdateTitle();
                     }
